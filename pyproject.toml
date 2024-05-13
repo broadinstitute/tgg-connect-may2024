@@ -29,6 +29,7 @@ dev = [
   "pytest",
   "ruff",
   "hail",
+  "loguru",
 ]
 
 [project.scripts]

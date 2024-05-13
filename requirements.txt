@@ -121,6 +121,8 @@ jmespath==1.0.1
     #   botocore
 jproperties==2.1.1
     # via hail
+loguru==0.7.2
+    # via tgg-movies (pyproject.toml)
 markupsafe==2.1.5
     # via jinja2
 msal==1.28.0
