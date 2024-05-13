@@ -113,3 +113,19 @@ tox -e fix
 Take a look at `tox.ini` for a reference on using the various tools directly
 from the command line. During development, you don't always need to execute
 through tox's isolated environments.
+
+### 11. Add New Dependencies
+
+When you need to add new dependencies to the project, update the `pyproject.toml` configuration to include the new packages. After adding the dependencies, generate a new `requirements.txt` file to reflect these changes and ensure compatibility across environments:
+
+```bash
+pip-compile --all-extras --resolver=backtracking pyproject.toml
+```
+
+Then, synchronize the project's virtual environment to install newly added dependencies:
+
+```bash
+pip-sync
+```
+
+Remember to commit both the updated `pyproject.toml` and `requirements.txt` files to version control. This ensures other contributors and environments like CI/CD systems use the same dependencies.
