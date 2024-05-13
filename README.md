@@ -1,4 +1,4 @@
-# TGG Connect DayCoding Group Breakout
+# TGG Connect Day: Coding Group Breakout
 
 _May 14, 2024_
 
