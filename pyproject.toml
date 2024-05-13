@@ -21,6 +21,7 @@ dependencies = []
 
 [project.optional-dependencies]
 dev = [
+  "tox",
   "black",
   "coverage",
   "mypy",
@@ -30,6 +31,7 @@ dev = [
   "ruff",
   "hail",
   "loguru",
+  "ipython",
 ]
 
 [project.scripts]
