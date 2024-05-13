@@ -1,18 +1,77 @@
-# tgg-movies
+# TGG Connect DayCoding Group Breakout
 
-## Detailed Usage
+_May 14, 2024_
 
-### 1. Install tox using pipx
+## Goal: LLM-driven development with Hail
 
-Tox is a tool for automating testing and development tasks in isolated
-environments. You can use pipx, a package runner for Python applications, to
-install tox. The command is simply:
+### Guidelines:
 
-```bash
-pipx install tox
-```
+Collaboratively explore test-driven development using large language model (LLM) coding tools!
 
-### 3. Create and Activate a Virtual Environment
+One team member will operate the coding tools, while others will contribute prompts. Aim to minimize manual coding to push the boundaries of these tools.
+
+Remember, AI coding tools often make mistakes! Writing tests is crucial. Executing `tox` will assess your test coverage.
+
+Since so many of us work with Hail, we utilize the "movie lens" dataset that Hail can download for us. This includes 1,682 movies, 100,000 movie reviews from 943 users. See `schemas.txt` for what the data looks like. use the `get_movies_data.py` script to download it.
+
+Write library functions in the `src` , tests in `tests`, and exploratory work in the `notebooks` dirs.
+
+Below are several project ideas for your group. There is no single correct approach—enjoy experimenting in your team.
+
+## Development ideas
+
+1. **Movie Popularity Analysis**
+
+   - **Objective:** Determine the popularity of movies by analyzing rating distributions.
+   - **Task:** Calculate each movie's average rating, list the top and bottom 10 by rating, and visualize the results.
+
+2. **User Engagement Study**
+
+   - **Objective:** Identify which user demographics are most active in rating movies.
+   - **Task:** Aggregate and visualize ratings by age, sex, and occupation.
+
+3. **Genre Preferences by Demographics**
+
+   - **Objective:** Investigate how movie genre preferences vary among different demographics.
+   - **Task:** Analyze the most popular genres within user segments defined by age and sex.
+
+4. **Collaborative Filtering From Scratch**
+
+   - **Objective:** Develop a basic collaborative filtering algorithm for movie recommendations.
+   - **Task:** Construct a user-item rating matrix to identify similar users and recommend movies.
+
+5. **Temporal Trends in Movie Ratings**
+
+   - **Objective:** Explore how movie ratings have evolved over time.
+   - **Task:** Plot average movie ratings over different release years or periods.
+
+6. **Sentiment Analysis of Movie Titles**
+
+   - **Objective:** Examine the relationship between the sentiment of movie titles and their ratings.
+   - **Task:** Apply sentiment analysis to movie titles and correlate the results with average ratings.
+
+7. **Geographic Analysis of User Activity**
+
+   - **Objective:** Analyze geographic patterns in user activity or preferences.
+   - **Task:** Map user activity or preferences by zip code.
+
+8. **Impact of Movie Genres on Ratings**
+
+   - **Objective:** Evaluate whether certain genres consistently receive higher or lower ratings.
+   - **Task:** Calculate average ratings per genre and compare them using bar charts.
+
+9. **Advanced Filtering Interface**
+
+   - **Objective:** Create a dynamic filtering interface for querying the dataset.
+   - **Task:** Build a search interface in Hail that supports multiple criteria such as genre, demographics, and rating thresholds.
+
+10. **Movie Recommendation System**
+    - **Objective:** Construct a simple movie recommendation system.
+    - **Task:** Develop user profiles based on past ratings, match these to genre preferences, and suggest new movies.
+
+## Installation
+
+### 1. Create and Activate a Virtual Environment
 
 Virtual environments in Python isolate project dependencies, ensuring different
 projects don't interfere with each other. To create and activate a new virtual
@@ -23,7 +82,7 @@ python -m venv .venv
 source .venv/bin/activate
 ```
 
-### 4. Install the Dependencies
+### 2. Install the Dependencies
 
 The requirements.txt file lists the Python dependencies for your project. Using
 pip-tools, we can pin the exact version of each dependency to ensure
@@ -37,19 +96,7 @@ python -m pip install --upgrade pip setuptools wheel pip-tools
 pip-sync
 ```
 
-You can optionally use pip-tools to update all dependencies before running
-`pip-sync`. This isn't strictly necessary as I keep this repository more-or-less
-up to date, and dependabot will submit pull requests for out of date packages
-automatically.
-
-```bash
-pip-compile --all-extras --resolver=backtracking --upgrade pyproject.toml
-```
-
-Note: You can always reference the command to pin dependencies in a comment at
-the top of requirements.txt.
-
-### 5. Install the First-Party Package in Editable Mode
+### 3. Install the First-Party Package in Editable Mode
 
 The -e option allows pip to install the package in editable mode. This means
 changes to the source code will immediately affect the package without needing
@@ -59,7 +106,7 @@ to reinstall it:
 python -m pip install -e .
 ```
 
-### 6. Install the Pre-commit Hooks
+### 4. Install the Pre-commit Hooks
 
 Pre-commit is a framework for managing git pre-commit hooks. These checks are
 run before your changes are committed to ensure code quality. To install
@@ -75,7 +122,7 @@ You can also update the hook versions:
 pre-commit autoupdate
 ```
 
-### 7. Run the Test Suite with tox
+### 5. Run the Test Suite with tox
 
 Now you can run the project's test suite using the previously installed tox
 tool:
@@ -91,17 +138,7 @@ pyenv to make this easy.
 You can add additional python versions to test against by modifying `tox.ini`
 and the corresponding github-action workflow.
 
-### 8. Replace the Project Name
-
-Now replace the placeholder project name tgg_movies/tgg-movies
-with the name of your actual project throughout the project files.
-
-### 9. Update Project Metadata
-
-Update the project metadata in both pyproject.toml and README.md to match your
-project's details.
-
-### 10. Write Code and Lint it
+### 6. Write Code and Lint it
 
 Now write your code! After that, you can run linting checks and auto-fix issues
 using tox:
@@ -114,7 +151,7 @@ Take a look at `tox.ini` for a reference on using the various tools directly
 from the command line. During development, you don't always need to execute
 through tox's isolated environments.
 
-### 11. Add New Dependencies
+### 7. Add New Dependencies
 
 When you need to add new dependencies to the project, update the `pyproject.toml` configuration to include the new packages. After adding the dependencies, generate a new `requirements.txt` file to reflect these changes and ensure compatibility across environments:
 
