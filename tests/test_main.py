@@ -4,7 +4,7 @@ import logging
 
 import pytest
 
-from bulletproof_python import main
+from tgg_movies import main
 
 
 def test_main(caplog: pytest.LogCaptureFixture) -> None:
