@@ -1,0 +1,118 @@
+2024-05-13T14:44:32.744531-0400 INFO Movie lens data already exists. Skipping download. get_movie_data.py
+2024-05-13T14:44:32.744622-0400 INFO Reading movies data from data/movies/movies.ht... get_movie_data.py
+24/05/13 14:44:34 WARN Utils: Your hostname, wm6ba-2b5 resolves to a loopback address: 127.0.0.1; using 192.168.50.32 instead (on interface en0)
+24/05/13 14:44:34 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+24/05/13 14:44:35 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2024-05-13T14:44:39.337035-0400 INFO Describing movies data... get_movie_data.py
+----------------------------------------
+Global fields:
+    None
+----------------------------------------
+Row fields:
+    'id': int32
+    'title': str
+    'genres': array<str>
+----------------------------------------
+Key: ['id']
+----------------------------------------
+2024-05-13T14:44:39.337153-0400 INFO Showing movies data... get_movie_data.py
++-------+--------------------------------------------------------+
+|    id | title                                                  |
++-------+--------------------------------------------------------+
+| int32 | str                                                    |
++-------+--------------------------------------------------------+
+|     1 | "Toy Story (1995)"                                     |
+|     2 | "GoldenEye (1995)"                                     |
+|     3 | "Four Rooms (1995)"                                    |
+|     4 | "Get Shorty (1995)"                                    |
+|     5 | "Copycat (1995)"                                       |
+|     6 | "Shanghai Triad (Yao a yao yao dao waipo qiao) (1995)" |
+|     7 | "Twelve Monkeys (1995)"                                |
+|     8 | "Babe (1995)"                                          |
+|     9 | "Dead Man Walking (1995)"                              |
+|    10 | "Richard III (1995)"                                   |
++-------+--------------------------------------------------------+
+
++-------------------------------------+
+| genres                              |
++-------------------------------------+
+| array<str>                          |
++-------------------------------------+
+| ["Animation","Children's","Comedy"] |
+| ["Action","Adventure","Thriller"]   |
+| ["Thriller"]                        |
+| ["Action","Comedy","Drama"]         |
+| ["Crime","Drama","Thriller"]        |
+| ["Drama"]                           |
+| ["Drama","Sci-Fi"]                  |
+| ["Children's","Comedy","Drama"]     |
+| ["Drama"]                           |
+| ["Drama","War"]                     |
++-------------------------------------+
+showing top 10 rows
+
+2024-05-13T14:44:44.998975-0400 INFO Reading ratings data from data/movies/ratings.ht... get_movie_data.py
+2024-05-13T14:44:45.128189-0400 INFO Describing ratings data... get_movie_data.py
+----------------------------------------
+Global fields:
+    None
+----------------------------------------
+Row fields:
+    'user_id': int32
+    'movie_id': int32
+    'rating': int32
+----------------------------------------
+Key: []
+----------------------------------------
+2024-05-13T14:44:45.128297-0400 INFO Showing ratings data... get_movie_data.py
++---------+----------+--------+
+| user_id | movie_id | rating |
++---------+----------+--------+
+|   int32 |    int32 |  int32 |
++---------+----------+--------+
+|     196 |      242 |      3 |
+|     186 |      302 |      3 |
+|      22 |      377 |      1 |
+|     244 |       51 |      2 |
+|     166 |      346 |      1 |
+|     298 |      474 |      4 |
+|     115 |      265 |      2 |
+|     253 |      465 |      5 |
+|     305 |      451 |      3 |
+|       6 |       86 |      3 |
++---------+----------+--------+
+showing top 10 rows
+
+2024-05-13T14:44:46.915094-0400 INFO Reading users data from data/movies/users.ht... get_movie_data.py
+2024-05-13T14:44:46.974556-0400 INFO Describing users data... get_movie_data.py
+----------------------------------------
+Global fields:
+    None
+----------------------------------------
+Row fields:
+    'id': int32
+    'age': int32
+    'sex': str
+    'occupation': str
+    'zipcode': str
+----------------------------------------
+Key: ['id']
+----------------------------------------
+2024-05-13T14:44:46.974638-0400 INFO Showing users data... get_movie_data.py
++-------+-------+-----+-----------------+---------+
+|    id |   age | sex | occupation      | zipcode |
++-------+-------+-----+-----------------+---------+
+| int32 | int32 | str | str             | str     |
++-------+-------+-----+-----------------+---------+
+|     1 |    24 | "M" | "technician"    | "85711" |
+|     2 |    53 | "F" | "other"         | "94043" |
+|     3 |    23 | "M" | "writer"        | "32067" |
+|     4 |    24 | "M" | "technician"    | "43537" |
+|     5 |    33 | "F" | "other"         | "15213" |
+|     6 |    42 | "M" | "executive"     | "98101" |
+|     7 |    57 | "M" | "administrator" | "91344" |
+|     8 |    36 | "M" | "administrator" | "05201" |
+|     9 |    29 | "M" | "student"       | "01002" |
+|    10 |    53 | "M" | "lawyer"        | "90703" |
++-------+-------+-----+-----------------+---------+
+showing top 10 rows
