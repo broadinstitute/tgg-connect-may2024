@@ -281,7 +281,7 @@ requests-oauthlib==2.0.0
     # via
     #   google-auth-oauthlib
     #   msrest
-rich==12.6.0
+rich==13.7.1
     # via
     #   hail
     #   typer
