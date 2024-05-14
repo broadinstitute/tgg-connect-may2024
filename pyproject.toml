@@ -32,6 +32,9 @@ dev = [
   "hail",
   "loguru",
   "ipython",
+  "seaborn",
+  "pandas",
+  "matplotlib",
 ]
 
 [project.scripts]
