@@ -111,7 +111,7 @@ google-auth-oauthlib==0.8.0
     # via hail
 hail==0.2.130
     # via tgg-movies (pyproject.toml)
-humanize==1.1.0
+humanize==4.9.0
     # via hail
 identify==2.5.36
     # via pre-commit
