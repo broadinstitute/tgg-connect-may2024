@@ -82,6 +82,8 @@ python -m venv .venv
 source .venv/bin/activate
 ```
 
+If this doesn't work you may have another approach to creating venvs that are specific to your system (pyenv, conda).
+
 ### 2. Install the Dependencies
 
 The requirements.txt file lists the Python dependencies for your project. Using
