@@ -168,3 +168,107 @@ pip-sync
 ```
 
 Remember to commit both the updated `pyproject.toml` and `requirements.txt` files to version control. This ensures other contributors and environments like CI/CD systems use the same dependencies.
+
+## LLMs for software development
+
+### What are LLMs and how do they work?
+
+- Watch this: [Andrej Karpathy: Intro to Large Language Models](https://www.youtube.com/watch?v=zjkBMFhNj_g)
+
+### How are LLMs relevant to us as computational personnel?
+
+- Automating code generation and completion
+- Enhancing debugging and error detection
+- Improving documentation
+- Facilitating code review processes
+- Assisting in learning new programming languages and frameworks
+- **Reduce tedium so that we can focus on the real problem at hand**
+
+### Don't get left behind
+
+Even if you dislike using them now, LLMs will continue to improve. Keep up-to-date!
+
+OpenAI's [ChatGPT-4o](https://openai.com/index/hello-gpt-4o) released yesterday
+
+"**...new flagship model that can reason across audio, vision, and text in real time.**"
+
+### Considerations for effective LLM use in software development
+
+- How is LLM assistance executed in your environment?
+- Are you pasting into a browser or are you using an editor integration?
+- What information does it have access to (context window)?
+- What model have you chosen (proprietary, open, fine-tuned)?
+- How have you prompted it?
+- What is the cost (flat rate vs. API)?
+- How are you ensuring it is correct?
+- How are you protecting sensitive info?
+
+### Types of LLM assistance for software development
+
+- Chat-based (e.g. ChatGPT web UI)
+- Autocomplete (e.g. GitHub Copilot [VSCode extension](https://code.visualstudio.com/docs/copilot/overview))
+- Inline chat writing/rewriting sections of code (e.g. [Neovim's gp.nvim](https://github.com/Robitx/gp.nvim))
+- Changes across an entire code repository (e.g. [Copilot Workspaces](https://github.blog/2024-04-29-github-copilot-workspace/), [Cody](https://sourcegraph.com/cody), Devon)
+- Systems-wide/infrastructure changes (to my knowledge, doesn't exist yet)
+
+### The "context window" is very important to quality of results
+
+What does the LLM know about your code?
+
+- A single prompt?
+- Your whole source tree?
+- Consider the price of the context window!
+- Remove wrong/unnecessary information from the context window
+- Maximize type annotations in your code
+- Add errors to the context to improve debugging
+
+### Prompts
+
+Providing consistent prompts...
+
+- Ensures consistent code style, formatting, and methodologies
+- Balance LLM output for concise vs. detailed responses
+- Think of it like automation (run this prompt for everything I ask the LLM)
+
+#### Prompts (example 1)
+
+"You are an autoregressive language model that has been fine-tuned with instruction-tuning and RLHF. You carefully provide accurate, factual, thoughtful, nuanced answers, and are brilliant at reasoning. If you think there might not be a correct answer, you say so. Since you are autoregressive, each token you produce is another opportunity to use computation, therefore you always spend a few sentences explaining background context, assumptions, and step-by-step thinking BEFORE you try to answer a question.
+
+Our users are experts in AI and ethics, so they already know you're a language model and your capabilities and limitations, so don't remind them of that. They're familiar with ethical issues in general, so you don't need to remind them about those either. Don't be verbose in your answers, but do provide details and examples where it might help the explanation."
+
+From [Jeremy Howard: A Hackers' Guide to Language Models (YouTube)](https://www.youtube.com/watch?v=jkrNMKz9pWU)
+
+### Example 2: Matt's python prompt
+
+- Write all tests with pytest. Use pytest-mock where it is relevant
+- When adding log statements, you will be using a preconfigured instance of loguru (from loguru import logger)
+- Add conventional python docstrings for automated documentation generation. Try to be brief. Don't need to add docstrings to tests
+- Use typical python exceptions where appropriate
+- Using typing library where possible
+- When defining classes, use @attr.define where necessary
+- Return data objects as pydantic objects instead of dictionaries, defining the class if it does not exist
+- Satisfy pyright type checker
+- Line length, including docstrings, should be 88 characters including tabs. Break everything onto multiple lines, err toward line length ~70 if necessary
+
+### Pricing
+
+Flat rates: ~$20 to $30 for ChatGPT4/Copilot
+
+[OpenAI API pricing](https://openai.com/api/pricing/)
+
+e.g. so if my source tree has 30,000 tokens and I send the whole thing, it is $0.30.
+
+### Ensuring correctness
+
+- LLM code can be horrible; use tests!
+- Iteration is key
+- Give previous examples in the context
+- Include expected inputs/outputs in the context
+
+### Be careful
+
+- Follow Broad LLM's [best practices](https://intranet.broadinstitute.org/gaiwg/best-practices-using-generative-ai-tools-work?check_logged_in=1)
+- Always question results
+- Avoid committing too much garbage AI-generated code (especially if you don't understand) 😂
+- Very tempting to continuously have AI do the work
+- _"The best LLM coding extension is your brain"_ -- Reddit User
