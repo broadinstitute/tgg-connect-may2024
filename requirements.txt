@@ -270,7 +270,7 @@ pyyaml==6.0.1
     #   pre-commit
 regex==2024.5.10
     # via parsimonious
-requests==2.31.0
+requests==2.32.1
     # via
     #   azure-core
     #   hail
