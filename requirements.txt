@@ -310,7 +310,7 @@ tabulate==0.9.0
     # via hail
 tenacity==8.3.0
     # via plotly
-tornado==6.4
+tornado==6.4.1
     # via bokeh
 tox==4.15.0
     # via tgg-movies (pyproject.toml)
