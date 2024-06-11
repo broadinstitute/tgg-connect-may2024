@@ -176,7 +176,7 @@ numpy==1.26.4
     #   scipy
 oauthlib==3.2.2
     # via requests-oauthlib
-orjson==3.9.10
+orjson==3.10.4
     # via hail
 packaging==24.0
     # via
