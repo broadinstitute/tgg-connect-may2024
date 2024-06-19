@@ -24,7 +24,7 @@ azure-core==1.30.1
     #   azure-mgmt-core
     #   azure-storage-blob
     #   msrest
-azure-identity==1.16.0
+azure-identity==1.17.0
     # via hail
 azure-mgmt-core==1.4.0
     # via azure-mgmt-storage
