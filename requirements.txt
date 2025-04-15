@@ -82,7 +82,7 @@ cryptography==42.0.7
     #   azure-storage-blob
     #   msal
     #   pyjwt
-decorator==4.4.2
+decorator==5.1.1
     # via
     #   hail
     #   ipython
